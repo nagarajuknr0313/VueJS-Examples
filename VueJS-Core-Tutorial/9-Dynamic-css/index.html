@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Dynamic CSS</h1>
+        <!-- <h3>Example 1</h3> -->
+        <!-- <div v-bind:class="{red:true,blue:true}"></div> -->
+        <!-- <div @click="available=!available" v-bind:class="{available:available}">
+            <span>Nagaraju</span>
+        </div> -->
+        <h3>Example 2</h3>
+        <button v-on:click="nearby=!nearby">Toggle nearby</button>
+        <button v-on:click="available=!available">Toggle available</button>
+        <div v-bind:class="compClasses">
+            <span>Nagaraju</span>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                available: false,
+                nearby: false
+            },
+            methods: {
+
+            },
+            computed: {
+                compClasses: function() {
+                    return {
+                        available: this.available,
+                        nearby: this.nearby
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

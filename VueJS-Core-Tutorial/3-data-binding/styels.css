@@ -1,0 +1,13 @@
+#vue-app h1 {
+    color: red;
+    text-align: center;
+}
+
+#vue-app h3 {
+    color: green;
+    text-align: center;
+}
+
+#vue-app {
+    text-align: center;
+}

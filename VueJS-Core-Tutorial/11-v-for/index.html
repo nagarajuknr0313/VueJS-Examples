@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Looping through lists</h1>
+        <ul>
+            <li v-for="(character,index) in characters">{{index}}.{{character}}</li>
+        </ul>
+        <h1>Looping through Names</h1>
+        <ul>
+            <li v-for="(name,index) in names">{{index}}.{{name.name}}-{{name.age}}</li>
+        </ul>
+        <template v-for="(name,index) in names">
+            <h3>{{index}}.{{name.name}}-{{name.age}}</h3>
+        </template>
+        <template v-for="name in names">
+            <div v-for="(val,key) in name">
+                <p>{{key}}-{{val}}</p>
+            </div>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                characters: ['Nagaraju', 'Lakshmi', 'Ganesh', 'Sriram'],
+                names: [{
+                    name: 'Sandeep',
+                    age: 25
+                }, {
+                    name: 'vindo',
+                    age: 30
+                }, {
+                    name: 'Srikanth',
+                    age: 25
+                }]
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

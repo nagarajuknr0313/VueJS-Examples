@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <!-- <script src="./app.js"></script> -->
+    <title>Vue Instance</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Event Modifiers</h1>
+        <!-- <button v-on:click="add(1)">Add a Year</button>
+        <button v-on:click="substract(1)">Substract a Year</button>
+        <button v-on:dblclick="add(10)">Add a Year</button>
+        <button v-on:dblclick="substract(10)">Substract a Year</button> -->
+
+        <button @click.once="add(1)">Add a Year</button>
+        <button @click="substract(1)">Substract a Year</button>
+        <button @dblclick="add(10)">Add a Year</button>
+        <button @dblclick="substract(10)">Substract a Year</button>
+        <p>My age is {{age}}</p>
+        <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+        <a v-on:click.prevent="click" href="https://www.google.co.in">The Netninja</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                x: 0,
+                y: 0,
+                age: 18
+            },
+            methods: {
+                add: function(inc) {
+                    this.age += inc;
+                },
+                substract: function(dec) {
+                    this.age -= dec;
+                },
+                updateXY: function(event) {
+                    // console.log(event);
+                    this.x = event.offsetX;
+                    this.y = event.offsetY;
+                },
+                click: function() {
+                    alert('You clicked me');
+                }
+            }
+        });
+    </script>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>

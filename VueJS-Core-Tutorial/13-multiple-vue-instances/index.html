@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+    <h1>Multiple Vue Instances</h1>
+    <div id="vue-app-one">
+        <h3>First Vue Instances</h3>
+        <div>{{title}}</div>
+        <div>{{greet}}</div>
+    </div>
+    <div id="vue-app-two">
+        <h3>Second Vue Instances</h3>
+        <div>{{ title}} </div>
+        <div>{{greet}}</div>
+        <button v-on:click="changeTitle">Change first instance title</button>
+    </div>
+    <script>
+        var firstInstance = new Vue({
+            el: '#vue-app-one',
+            data: {
+                title: 'I am from first instance'
+            },
+            methods: {
+
+            },
+            computed: {
+                greet: function() {
+                    return 'I am a function from first Vue Instance'
+                }
+            }
+        });
+        var secondInstance = new Vue({
+            el: '#vue-app-two',
+            data: {
+                title: 'I am from second instance'
+            },
+            methods: {
+                changeTitle: function() {
+                    firstInstance.title = 'Title changed from Second Instnace button click'
+                }
+
+            },
+            computed: {
+                greet: function() {
+                    return 'I am a function from Second Vue Instance'
+                }
+            }
+        });
+        secondInstance.title = 'Title changed from outside'
+    </script>
+</body>
+
+</html>

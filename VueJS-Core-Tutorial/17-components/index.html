@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+    <h1>Introduction to Components</h1>
+    <div id="vue-app-one">
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-two">
+        <greeting></greeting>
+    </div>
+    <script>
+        // Creating component
+        // var data = {
+        //     name: 'Nagaraju'
+        // }
+        Vue.component('greeting', {
+            template: '<div style="color:red">Hi Nagaraju, I am your first component called greeting   {{name}}.<button v-on:click="changeName">Change Name</button></div>',
+            data: function() {
+                return {
+                    name: 'Nagaraju'
+                };
+            },
+            methods: {
+                changeName: function() {
+                    this.name = 'Venkatesh'
+                }
+            }
+        })
+        var firstInstance = new Vue({
+            el: '#vue-app-one',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        });
+        var secondInstance = new Vue({
+            el: '#vue-app-two',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+                greet: function() {
+                    return 'I am a function from Second Vue Instance'
+                }
+            }
+        });
+        secondInstance.title = 'Title changed from outside'
+    </script>
+</body>
+
+</html>

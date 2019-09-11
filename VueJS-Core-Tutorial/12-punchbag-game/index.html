@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Punchbag Game</h1>
+        <!-- Bag image -->
+        <div id="bag" v-bind:class="{burst:ended}"></div>
+        <!-- Bag health -->
+        <div id="bag-health">
+            <div v-bind:style="{width:health + '%'}"></div>
+        </div>
+        <!-- Game controls -->
+        <div id="controls">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                health: 100,
+                ended: false
+            },
+            methods: {
+                punch: function() {
+                    this.health -= 10;
+                    if (this.health <= 0) {
+                        this.ended = true;
+                    }
+                },
+                restart: function() {
+                    this.health = 100;
+                    this.ended = false;
+                }
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

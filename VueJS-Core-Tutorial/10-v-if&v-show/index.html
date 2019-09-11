@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <title>VueJS Course</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Conditionals</h1>
+        <button @click="error=!error">Toggle Error</button>
+        <button @click="success=!success">Toggle Success</button>
+        <!-- <p v-if="error">There has been an error</p>
+        <p v-else-if="success">Success Button clicked</p> -->
+        <p v-show="error">There has been an error</p>
+        <p v-show="success">You clicked on Success</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                error: false,
+                success: false
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

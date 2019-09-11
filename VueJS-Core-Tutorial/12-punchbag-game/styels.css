@@ -1,0 +1,31 @@
+#vue-app {
+    text-align: center;
+}
+
+#bag {
+    width: 200px;
+    height: 400px;
+    margin: 0 auto;
+    background: url(./images/punchBag_red.jpeg) center no-repeat;
+}
+
+#bag-health {
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto 20px auto;
+}
+
+#bag.burst {
+    background: url(./images/PunchBag_black.jpeg) center no-repeat;
+    background-size: 80%;
+}
+
+#bag-health div {
+    height: 20px;
+    background: crimson;
+}
+
+#controls {
+    width: 120px;
+    margin: 0 auto;
+}

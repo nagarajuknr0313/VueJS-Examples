@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Vue Installation -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="styels.css" rel="stylesheet">
+    <!-- <script src="./app.js"></script> -->
+    <title>VueJS Course</title>
+</head>
+
+<body>
+
+    <div id="vue-app">
+        <h1>Two Way Data Binding</h1>
+        <label>Name:</label><input type="text" v-model="name" />
+        <div>You entered name is {{name}}</div><br />
+        <label>Age:</label><input type="text" v-model="age" />
+        <div>You entered age is{{age}}</div><br />
+    </div>
+    <script>
+        new Vue({
+            el: '#vue-app',
+            data: {
+                name: '',
+                age: ''
+            },
+            methods: {
+                logName: function() {
+                    console.log('You entered your name');
+                },
+                logAge: function() {
+                    console.log('You enterd your Age');
+                }
+            }
+        });
+    </script>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>
